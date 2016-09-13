@@ -2,11 +2,21 @@
 #define __TEST_DLL_H__
 
 #if defined (EXPORTBUILD)  
-# define _DLLExport __declspec (dllexport)  
+# define _DLLExport extern "C" __declspec (dllexport)  
 # else  
-# define _DLLExport __declspec (dllimport)  
+# define _DLLExport extern "C" __declspec (dllimport)  
 #endif  
 
-extern "C" int _DLLExport add(int x, int y);
+_DLLExport int add(int x, int y);
+
+typedef struct
+{
+	int a;
+	int b;
+	int c;
+} CppStruct;
+
+_DLLExport bool getStructData(CppStruct& d);
+// _DLLExport bool getStructData(CppStruct* d);
 
 #endif
