@@ -1,11 +1,13 @@
 ### 摘要
 unity用的很普遍，现在很多代码还是用c++写的，需要用unity去调用c++的代码。这里介绍了一种unity调用c++ dll的方法，希望有所帮助。
 **我采用的软件是<font color=Red>Visual Studio 2015</font>和<font color=Red> Unity 5.3.4</font>**
+
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913120622539-49874596.png)
 
 ------------
 
 ## 1. 建立VS DLL 工程
+
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913120631867-909184150.png)
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913120644336-2084234893.png)
 
@@ -67,10 +69,12 @@ _DLLExport bool getStructData(CppStruct& d)
 ```
 
 ## 3. 构建Dll 文件
+
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913141901398-1198271649.png)
 
 ## 4. unity 工程创建
 在unity在 Assets文件下文件Plugins目录，在目录下方放入Dll文件。要是没有Plugins文件夹，就新建一个。
+
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913142040430-1093884713.png)
 
 ## 5. unity 代码编辑
@@ -114,6 +118,8 @@ public class NewBehaviourScript : MonoBehaviour {
 }
 ```
 unity运行结果
+
 ![](http://images2015.cnblogs.com/blog/1014091/201609/1014091-20160913163008211-1998875525.png)
+
 **<font color=Blue>项目地址</font>**
 https://github.com/caimagic/Unity_Call_Cplusplus-s-Dll.git
